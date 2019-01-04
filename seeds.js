@@ -4,18 +4,33 @@ var mongoose    = require("mongoose"),
     
 var data = [
     {
-        type: "Test 1d",
-        desc: "From SeedsDB1"
+        
+        desc: "From SeedsDB1",
+        exercise: {chest: {
+            incBenchPress: 2,
+            bbBenchPress: 3
+        },
+        back: "3"}
         
     },
     {
-        type: "Test 2d",
-        desc: "From SeedsDB2"
+        
+        desc: "From SeedsDB2",
+        exercise: {chest: {
+            incBenchPress: 0,
+            bbBenchPress: 0
+        },
+        back: "3"}
         
     },
     {
-        type: "Test 2d",
-        desc: "From SeedsDB3"
+       
+        desc: "From SeedsDB3",
+        exercise: {chest: {
+            incBenchPress: 6,
+            bbBenchPress: 7
+        },
+        back: "0"}
         
     }
 ];
@@ -35,9 +50,9 @@ function seedDB(){
                      console.log("Added a log" + log);
                 }
               });
-           });
+            });
         });
         
-}
+};
 
  module.exports = seedDB;

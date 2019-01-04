@@ -2,13 +2,20 @@ var mongoose = require("mongoose");
 
 //MONGO SCHEMA
 var logSchema = new mongoose.Schema({
-   type: String,   
    desc: String,
+   exercise: {
+      chest: {
+         incBenchPress: Number,
+         bbBenchPress: Number
+      },
+      back: Number
+   },
    date: {type: Date, default: Date.now}
+   
 });
 
 
-//MONGOOSE MODEL
+// MONGOOSE MODEL
 // var Log = mongoose.model("Log", logSchema);
 
 // SEED LOG - MONGOOSE

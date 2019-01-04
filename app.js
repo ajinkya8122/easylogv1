@@ -50,6 +50,12 @@ app.post("/logs", function(req, res){
 });
 
 
+//SHOW
+app.get("/logs/:id", function(req, res){
+   res.render("show");
+});
+
+
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("Server is running!")
 });
