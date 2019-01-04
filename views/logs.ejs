@@ -1,0 +1,39 @@
+<% include partials/header.ejs %>
+
+
+<div class="container">
+<h1>This is the home route!</h1>
+
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Type</th>
+        <th scope="col">Desc</th>
+        <th scope="col">Created</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% logs.forEach(function(log, i) { %>
+      <tr>
+        <th scope="row"><%= i+1  %></th>
+        <td><%= log.type %></td>
+        <td><%= log.desc %></td>
+        <% var date = new Date(log.date); %>
+        
+        <% var d = date.getDate(); %>
+        <% var m = date.getMonth(); %>
+        <% var y = date.getFullYear(); %>
+        <% var hr = date.getHours(); %>
+        <% var min = date.getMinutes(); %>
+        <td><%= d %>-<%= m+1 %>-<%= y %> at (<%=hr-5%>:<%=min%>)</td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  
+  <a href="/logs/new">Log new entry</a>
+  
+</div>
+
+<% include partials/footer.ejs %>

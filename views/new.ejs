@@ -1,0 +1,20 @@
+<% include partials/header.ejs %>
+
+
+
+<div class="container">
+    <h1>Create a new entry</h1>
+    
+    <form action="/logs" method="POST">
+        <div class="form-group">
+            <label for="type">Type</label>
+            <input type="text" placeholder="Type of Log" id="type" name="log[type]">
+            <label for="desc">Description</label>
+            <input type="text" placeholder="Description" id="desc" name="log[desc]">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+
+<% include partials/footer.ejs %>
